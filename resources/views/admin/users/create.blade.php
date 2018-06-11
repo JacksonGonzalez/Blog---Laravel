@@ -34,6 +34,7 @@
 
         <div class="form-group">
             {!! Form::submit('Registrar', ['class' => 'btn btn-primary']) !!}
+            <a href="{{ route('users.index') }}" class="btn btn-primary">Cancelar</a>
         </div>
 
     {!! Form::close() !!}
