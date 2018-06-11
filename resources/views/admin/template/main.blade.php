@@ -9,18 +9,16 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container">
         
         <div class="row">
             @include('admin.template.partials.nav')
         </div>
 
         <div class="row">
-            <div class="col-2"></div>
-            <section class="col-8">
+            <section class="col-12">
                     @yield('content')
             </section>
-            <div class="col-2"></div>
         </div>
             
     </div>
