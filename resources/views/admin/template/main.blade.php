@@ -17,6 +17,7 @@
 
         <div class="row">
             <section class="col-12">
+                    @include('flash::message')
                     @yield('content')
             </section>
         </div>
