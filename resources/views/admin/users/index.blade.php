@@ -33,7 +33,7 @@
               @endif
               </td>
               <td>
-                <a href="" class="btn btn-warning"><span><i class="far fa-edit"></i></span></a>
+                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning"><span><i class="far fa-edit"></i></span></a>
                 <a href="{{ route('users.destroy', $user->id) }}" onclick="return confirm('¿Seguro que deseas eliminarlo?')" class="btn btn-danger"><span><i class="far fa-trash-alt"></i></span></a>
               </td>
             </tr>
