@@ -19,6 +19,7 @@
         <div class="row">
             <section class="col-12">
                     @include('flash::message')
+                    @include('admin.template.partials.errors')
                     @yield('content')
             </section>
         </div>

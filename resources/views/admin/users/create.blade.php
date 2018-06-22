@@ -6,18 +6,6 @@
 @section('content')
     <h1 class="text-center mt-2">Crear Usuario</h1>
 
-    @if (count($errors) > 0)
-        <div class="alert alert-danger" role="alert">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>
-                    {{ $errors }}   
-                </li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
     {!! Form::open(['route' => 'users.store']) !!}
         <div class="form-group">
             {!! Form::label('name', 'Nombre') !!}
