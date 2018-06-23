@@ -16,8 +16,9 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //show the data 
-        return view('admin.categories.index');
+        //show the data
+        $categories = Category::orderBy('id', 'DESC')->paginate(5);
+        return view('admin.categories.index')->with('categories', $categories);
     }
 
     /**
@@ -65,7 +66,8 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category  = Category::find($id);
+        return view('admin.categories.edit')->with('category', $category);
     }
 
     /**
@@ -77,7 +79,14 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::find($id);
+        // dd($category);
+        // $category->fill($request->all());
+        $category->name = $request->name;
+        $category->update();
+
+        flash('Categoria editada exitosamente')->success();
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -88,6 +97,10 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+
+        flash('La Categoria ' . $category->name . ' ha sido borrado de forma exitosa')->error();
+        return redirect()->route('categories.index');
     }
 }

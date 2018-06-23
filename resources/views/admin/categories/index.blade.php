@@ -17,25 +17,17 @@
           </tr>
         </thead>
         <tbody>
-            {{-- @foreach ($users as $user)    
+            @foreach ($categories as $category)
             <tr>
-              <th class="lead" scope="row">{{ $user->id }}</th>
-              <td class="lead" >{{ $user->name }}</td>
-              <td class="lead" >{{ $user->username}}</td>
-              <td class="lead" >{{ $user->email }}</td>
+              <th class="lead" scope="row">{{ $category->id }}</th>
+              <td class="lead" >{{ $category->name }}</td>
+              <td class="lead" >{{ $category->updated_at}}</td>
               <td>
-              @if($user->type == "admin")
-                <p class="lead">Administrador</p>
-              @else
-                <p class="lead">Miembro</p>
-              @endif
-              </td>
-              <td>
-                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning"><span><i class="far fa-edit"></i></span></a>
-                <a href="{{ route('users.destroy', $user->id) }}" onclick="return confirm('¿Seguro que deseas eliminarlo?')" class="btn btn-danger"><span><i class="far fa-trash-alt"></i></span></a>
+                <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-warning"><span><i class="far fa-edit"></i></span></a>
+                <a href="{{ route('categories.destroy', $category->id) }}" onclick="return confirm('¿Seguro que deseas eliminarlo?')" class="btn btn-danger"><span><i class="far fa-trash-alt"></i></span></a>
               </td>
             </tr>
-            @endforeach --}}
+            @endforeach
         </tbody>
       </table>
       
