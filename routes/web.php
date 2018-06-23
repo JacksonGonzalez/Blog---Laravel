@@ -31,7 +31,6 @@ Route::group(['prefix' => 'admin'], function(){
     ]);
 });
 
-Route::get('articles', function() {
-    return 'Esta es la sección de articulos';
-});
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');

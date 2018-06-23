@@ -1,10 +1,11 @@
-@extends('admin.template.main')
+{{-- @extends('admin.template.main') --}}
+@extends('home')
 
 @section('title')
     Listar Usuarios
 @endsection
 
-@section('content')
+@section('formularios')
     <h1 class="text-center mt-2">Listar Usuarios</h1>
     <a href="{{ route('users.create') }}" class="btn btn-primary mb-1">Agregar Nuevo Usuario</a>
     <table class="table table-hover">
