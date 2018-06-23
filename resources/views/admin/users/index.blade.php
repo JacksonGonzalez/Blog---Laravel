@@ -5,9 +5,9 @@
     Listar Usuarios
 @endsection
 
-@section('formularios')
-    <h1 class="text-center mt-2">Listar Usuarios</h1>
-    <a href="{{ route('users.create') }}" class="btn btn-primary mb-1">Agregar Nuevo Usuario</a>
+@section('formulario')
+    <h1 class="text-center my-1">Listar Usuarios</h1>
+    <a href="{{ route('users.create') }}" class="btn btn-primary mb-2">Agregar Nuevo Usuario</a>
     <table class="table table-hover">
         <thead>
           <tr class="lead">

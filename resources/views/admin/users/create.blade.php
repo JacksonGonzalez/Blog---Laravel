@@ -1,9 +1,10 @@
-@extends('admin.template.main')
+{{-- @extends('admin.template.main') --}}
+@extends('home')
 @section('title')
     Formulario nuevo Usuario
 @endsection
 
-@section('content')
+@section('formulario')
     <h1 class="text-center mt-2">Crear Usuario</h1>
 
     {!! Form::open(['route' => 'users.store']) !!}

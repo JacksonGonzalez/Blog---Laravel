@@ -13,9 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     
-                    @yield('formularios')
+                    @include('flash::message')
+                    @include('admin.template.partials.errors')
+                    
+                    @yield('formulario')
                 </div>
             </div>
         </div>

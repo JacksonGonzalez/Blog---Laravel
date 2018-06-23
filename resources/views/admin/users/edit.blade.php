@@ -1,9 +1,10 @@
-@extends('admin.template.main')
+{{-- @extends('admin.template.main') --}}
+@extends('home')
 @section('title')
     Formulario Editar Usuario
 @endsection
 
-@section('content')
+@section('formulario')
     <h1 class="text-center mt-2">Editar Usuario</h1>
 
     {!! Form::open(['route' => ['users.update', $user->id], 'method' => 'PUT']) !!}
