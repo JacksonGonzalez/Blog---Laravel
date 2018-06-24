@@ -1,10 +1,10 @@
-@extends('admin.template.main')
-
+{{-- @extends('admin.template.main') --}}
+@extends('home')
 @section('title')
     Crear Categoria
 @endsection
 
-@section('content')
+@section('formulario')
     <h1 class="text-center mt-2">Crear Categoria</h1>
 
     {!! Form::open(['route' => 'categories.store']) !!}

@@ -1,10 +1,10 @@
-@extends('admin.template.main')
-
+{{-- @extends('admin.template.main') --}}
+@extends('home')
 @section('title')
     Editar Categorias
 @endsection
 
-@section('content')
+@section('formulario')
     <h1 class="text-center mt-2">Editar Categoria {{$category->name}}</h1>
 
     {!! Form::open(['route' => ['categories.update', $category->id], 'method' => 'PUT']) !!}

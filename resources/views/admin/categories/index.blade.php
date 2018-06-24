@@ -1,10 +1,10 @@
-@extends('admin.template.main')
-
+{{-- @extends('admin.template.main') --}}
+@extends('home')
 @section('title')
     Listar Categorias
 @endsection
 
-@section('content')
+@section('formulario')
     <h1 class="text-center mt-2">Listar Categorias</h1>
     <a href="{{ route('categories.create') }}" class="btn btn-primary mb-1">Agregar Nueva Categoria</a>
     <table class="table table-hover">
