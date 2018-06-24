@@ -17,17 +17,25 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
+    //Rutas para usuarios
     Route::resource('users', 'UsersController');
-
     Route::get('users/{id}/destroy', [
         'uses' => 'UsersController@destroy',
         'as' => 'users.destroy'
     ]);
-
+    
+    //Rutas para categorias
     Route::resource('categories', 'CategoriesController');
     Route::get('categories/{id}/destroy', [
         'uses' => 'CategoriesController@destroy',
         'as' => 'categories.destroy'
+    ]);
+
+    //Rutas para tags
+    Route::resource('tags', 'TagsController');
+    Route::get('tags/{id}/destroy', [
+        'uses' => 'TagsController@destroy',
+        'as' => 'tags.destroy'
     ]);
 });
 
