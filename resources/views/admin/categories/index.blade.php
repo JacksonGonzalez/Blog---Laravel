@@ -5,8 +5,8 @@
 @endsection
 
 @section('formulario')
-    <h1 class="text-center mt-2">Listar Categorias</h1>
-    <a href="{{ route('categories.create') }}" class="btn btn-primary mb-1">Agregar Nueva Categoria</a>
+    <h1 class="text-center my-1">Listar Categorias</h1>
+    <a href="{{ route('categories.create') }}" class="btn btn-primary mb-2">Agregar Nueva Categoria</a>
     <table class="table table-hover">
         <thead>
           <tr class="lead">

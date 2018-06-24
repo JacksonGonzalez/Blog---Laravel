@@ -109,4 +109,6 @@ class UsersController extends Controller
         flash('El usuario ' . $user->name . ' ha sido borrado de forma exitosa')->error();
         return redirect()->route('users.index');
     }
+
+    
 }
