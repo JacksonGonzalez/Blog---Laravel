@@ -7,6 +7,13 @@
 @section('formulario')
     <h1 class="text-center my-1">Listar Tags</h1>
     <a href="{{ route('tags.create') }}" class="btn btn-primary mb-2">Agregar Nueva Tag</a>
+    
+    {{-- Bucador de TAGS --}}
+      {!! Form::open(['route' => 'tags.index', 'method' => 'GET', 'class' => '']) !!}
+        <div class="input-group">
+          {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Buscar Tag..', 'id' => 'buscar']) !!}   
+      {!! Form::close() !!}
+    {{-- Fin del buscador --}}
     <table class="table table-hover">
         <thead>
           <tr class="lead">
