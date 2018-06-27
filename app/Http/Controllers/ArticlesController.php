@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Tag;
+use App\Article;
+use App\Image;
 
 class ArticlesController extends Controller
 {
@@ -15,7 +17,7 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.articles.index');
     }
 
     /**
@@ -40,15 +42,37 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        //Manipulacion de imagenes
-        $file = $request->file('image');
-        //forma de cambiarle el nombre para que sea original
-        $name = 'img_' . time() . '.'. $file->getClientOriginalExtension();
-        //se establece la ruta para guardar la imagen en path
-        $path = public_path() . '\images\articles';
-        //codigo para mover la imagen a esa ruta
-        $file->move($path, $name);
-        // dd($path);
+           
+        if($request->file('image')){
+            //Manipulacion de imagenes
+            $file = $request->file('image');
+            //forma de cambiarle el nombre para que sea original
+            $name = 'img_' . time() . '.'. $file->getClientOriginalExtension();
+            //se establece la ruta para guardar la imagen en path
+            $path = public_path() . '\images\articles';
+            //codigo para mover la imagen a esa ruta
+            $file->move($path, $name);
+            // dd($path);
+        }
+
+        $article = new Article($request->all());
+        $article->user_id = \Auth::user()->id;
+        $article->save();
+        // dd($article);
+
+        //metodo sinc para llenar la tabla pivote 
+        $article->tags()->sync($request->tags);
+
+        $image = new Image();
+        $image->name = $name;
+        //esto es para hacer la referencia del article_id a la tabla images
+        $image->article()->associate($article);
+        $image->save();
+
+
+        flash('Se ha creado el articulo ' . $article->title . ' de forma exitosa')->success();
+        return redirect()->route('articles.index');
+
     }
 
     /**
