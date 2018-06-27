@@ -23,7 +23,7 @@
 
         <div class="form-group">
                 {!! Form::label('tags', 'Tags') !!}
-                {!! Form::select('tags[]', $tags, null, ['class' => 'form-control', 'multiple', 'required']) !!}
+                {!! Form::select('tags[]', $tags, null, ['class' => 'form-control', 'multiple', 'data-placeholder' => 'Seleciona un tag', 'required']) !!}
         </div>
 
         <div class="form-group">
@@ -35,4 +35,14 @@
             {!! Form::submit('Agregar Articulo', ['class' => 'btn btn-primary']) !!}
         </div>
     {!! Form::close() !!}
+@endsection
+
+@section('js') 
+    <script>
+        $(".select-tag").chosen({
+            // no_results_text: "Oops, No encontrado!"
+        });
+
+        $('.textarea-content').trumbowyg();
+    </script>
 @endsection
