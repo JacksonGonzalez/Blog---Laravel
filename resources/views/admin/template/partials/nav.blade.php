@@ -10,7 +10,7 @@
           <a class="nav-link" href="{{ route('categories.index')}}">Categorias</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('users.index')}}">Articulos</a>
+          <a class="nav-link" href="{{ route('articles.index')}}">Articulos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('users.index')}}">Imagenes</a>
